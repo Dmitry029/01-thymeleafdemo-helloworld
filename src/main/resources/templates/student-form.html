@@ -11,11 +11,11 @@
 
 <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
 
-    First name: <input type="text" th:field="*{firstName}" />
+    First name: <input type="text" th:field="*{firstName}"/>
 
     <br><br>
 
-    Last name: <input type="text" th:field="*{lastName}" />
+    Last name: <input type="text" th:field="*{lastName}"/>
 
     <br><br>
 
@@ -23,7 +23,7 @@
 
     <select th:field="*{country}">
 
-        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}" />
+        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
 
     </select>
 
@@ -31,14 +31,14 @@
 
     Favorite Programming Language:
 
-    <input type="radio" th:field="*{favoriteLanguage}" th:value="Go">Go</input>
-    <input type="radio" th:field="*{favoriteLanguage}" th:value="Java">Java</input>
-    <input type="radio" th:field="*{favoriteLanguage}" th:value="Python">Python</input>
-    <input type="radio" th:field="*{favoriteLanguage}" th:value="Ruby">Ruby</input>
+    <input type="radio" th:field="*{favoriteLanguage}"
+                        th:each="tempLang : ${languages}"
+                        th:value="${tempLang}"
+                        th:text="${tempLang}" />
 
     <br><br>
 
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Submit"/>
 
 </form>
 
