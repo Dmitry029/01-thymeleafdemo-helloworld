@@ -15,4 +15,5 @@ public class Student {
     private String country;
     private String favoriteLanguage;
     private List<String> favoriteSystems;
+    private List<String> systems;
 }
